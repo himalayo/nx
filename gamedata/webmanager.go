@@ -16,9 +16,9 @@ import (
 	"time"
 
 	"b7c.io/swfx"
+	j "github.com/himalayo/nx/raw/json"
+	"github.com/himalayo/nx/res"
 	"golang.org/x/sync/errgroup"
-	j "xabbo.io/nx/raw/json"
-	"xabbo.io/nx/res"
 )
 
 type webGameDataManager struct {

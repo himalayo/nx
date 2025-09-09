@@ -1,7 +1,7 @@
 package res
 
 import (
-	x "xabbo.io/nx/raw/xml"
+	x "github.com/himalayo/nx/raw/xml"
 )
 
 // An Index describes the furni visualization and logic types.

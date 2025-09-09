@@ -8,7 +8,7 @@ import (
 	"image/color"
 	"os"
 
-	"xabbo.io/nx/res"
+	"github.com/himalayo/nx/res"
 )
 
 const shadowAlpha = 46

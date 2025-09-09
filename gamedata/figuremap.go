@@ -4,8 +4,8 @@ import (
 	"encoding/xml"
 	"strconv"
 
-	"xabbo.io/nx"
-	x "xabbo.io/nx/raw/xml"
+	"github.com/himalayo/nx"
+	x "github.com/himalayo/nx/raw/xml"
 )
 
 // A FigureMap defines mappings between figure part libraries and figure part identifiers.

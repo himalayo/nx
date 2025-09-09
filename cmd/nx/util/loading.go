@@ -1,9 +1,9 @@
 package util
 
 import (
-	gd "xabbo.io/nx/gamedata"
+	gd "github.com/himalayo/nx/gamedata"
 
-	"xabbo.io/nx/cmd/nx/spinner"
+	"github.com/himalayo/nx/cmd/nx/spinner"
 )
 
 func LoadGameData(mgr gd.Manager, message string, types ...gd.Type) error {

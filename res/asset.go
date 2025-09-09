@@ -3,8 +3,8 @@ package res
 import (
 	"image"
 
-	"xabbo.io/nx/raw/nitro"
-	x "xabbo.io/nx/raw/xml"
+	"github.com/himalayo/nx/raw/nitro"
+	x "github.com/himalayo/nx/raw/xml"
 )
 
 type Assets map[string]*Asset

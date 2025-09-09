@@ -3,8 +3,8 @@ package gamedata
 import (
 	"encoding/json"
 
-	"xabbo.io/nx"
-	j "xabbo.io/nx/raw/json"
+	"github.com/himalayo/nx"
+	j "github.com/himalayo/nx/raw/json"
 )
 
 // FurniData maps furniture info by identifier.

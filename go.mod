@@ -1,4 +1,4 @@
-module xabbo.io/nx
+module github.com/himalayo/nx
 
 go 1.22
 

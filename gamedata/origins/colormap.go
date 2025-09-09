@@ -3,8 +3,8 @@ package origins
 import (
 	"strings"
 
-	"xabbo.io/nx"
-	"xabbo.io/nx/gamedata"
+	"github.com/himalayo/nx"
+	"github.com/himalayo/nx/gamedata"
 )
 
 // ColorMap is a mapping from

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"xabbo.io/nx"
+	"github.com/himalayo/nx"
 )
 
 type FigureData struct {

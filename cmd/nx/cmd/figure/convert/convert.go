@@ -7,12 +7,12 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/himalayo/nx/cmd/nx/spinner"
+	gd "github.com/himalayo/nx/gamedata"
+	"github.com/himalayo/nx/gamedata/origins"
 	"github.com/spf13/cobra"
-	"xabbo.io/nx/cmd/nx/spinner"
-	gd "xabbo.io/nx/gamedata"
-	"xabbo.io/nx/gamedata/origins"
 
-	_parent "xabbo.io/nx/cmd/nx/cmd/figure"
+	_parent "github.com/himalayo/nx/cmd/nx/cmd/figure"
 )
 
 var Cmd = &cobra.Command{
@@ -31,7 +31,7 @@ func run(cmd *cobra.Command, args []string) (err error) {
 	cmd.SilenceUsage = true
 
 	originsFigure := strings.TrimSpace(args[0])
-	if len(originsFigure) % 5 != 0 {
+	if len(originsFigure)%5 != 0 {
 		return origins.ErrInvalidFigureStringLength
 	}
 

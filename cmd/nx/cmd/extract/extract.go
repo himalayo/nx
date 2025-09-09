@@ -13,8 +13,8 @@ import (
 
 	"b7c.io/swfx"
 
-	root "xabbo.io/nx/cmd/nx/cmd"
-	"xabbo.io/nx/raw/nitro"
+	root "github.com/himalayo/nx/cmd/nx/cmd"
+	"github.com/himalayo/nx/raw/nitro"
 )
 
 var opts struct {

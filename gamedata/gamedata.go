@@ -3,7 +3,7 @@ package gamedata
 import (
 	"reflect"
 
-	"xabbo.io/nx/res"
+	"github.com/himalayo/nx/res"
 )
 
 // Represents a type of game data.

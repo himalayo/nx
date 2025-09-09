@@ -10,12 +10,12 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/exp/maps"
 
-	gd "xabbo.io/nx/gamedata"
-	"xabbo.io/nx/res"
+	gd "github.com/himalayo/nx/gamedata"
+	"github.com/himalayo/nx/res"
 
-	_root "xabbo.io/nx/cmd/nx/cmd"
-	"xabbo.io/nx/cmd/nx/spinner"
-	"xabbo.io/nx/cmd/nx/util"
+	_root "github.com/himalayo/nx/cmd/nx/cmd"
+	"github.com/himalayo/nx/cmd/nx/spinner"
+	"github.com/himalayo/nx/cmd/nx/util"
 )
 
 var Cmd = &cobra.Command{

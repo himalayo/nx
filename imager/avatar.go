@@ -7,10 +7,10 @@ import (
 	"slices"
 	"strconv"
 
+	"github.com/himalayo/nx"
+	gd "github.com/himalayo/nx/gamedata"
+	"github.com/himalayo/nx/res"
 	"golang.org/x/exp/maps"
-	"xabbo.io/nx"
-	gd "xabbo.io/nx/gamedata"
-	"xabbo.io/nx/res"
 )
 
 /*

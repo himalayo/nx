@@ -9,15 +9,15 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"xabbo.io/nx"
-	gd "xabbo.io/nx/gamedata"
-	"xabbo.io/nx/imager"
-	"xabbo.io/nx/web"
+	"github.com/himalayo/nx"
+	gd "github.com/himalayo/nx/gamedata"
+	"github.com/himalayo/nx/imager"
+	"github.com/himalayo/nx/web"
 
-	_root "xabbo.io/nx/cmd/nx/cmd"
-	_parent "xabbo.io/nx/cmd/nx/cmd/imager"
-	"xabbo.io/nx/cmd/nx/spinner"
-	"xabbo.io/nx/cmd/nx/util"
+	_root "github.com/himalayo/nx/cmd/nx/cmd"
+	_parent "github.com/himalayo/nx/cmd/nx/cmd/imager"
+	"github.com/himalayo/nx/cmd/nx/spinner"
+	"github.com/himalayo/nx/cmd/nx/util"
 )
 
 var Cmd = &cobra.Command{

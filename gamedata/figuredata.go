@@ -3,8 +3,8 @@ package gamedata
 import (
 	"encoding/xml"
 
-	"xabbo.io/nx"
-	x "xabbo.io/nx/raw/xml"
+	"github.com/himalayo/nx"
+	x "github.com/himalayo/nx/raw/xml"
 )
 
 // FigureData defines the figure part sets and color palettes used for Habbo avatars.

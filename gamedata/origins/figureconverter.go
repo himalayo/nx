@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"xabbo.io/nx"
+	"github.com/himalayo/nx"
 )
 
 var ErrInvalidFigureStringLength = errors.New("invalid figure string: length must be a multiple of 5")
@@ -64,7 +64,7 @@ var hairToHatMap = map[int]int{
 
 // Convert converts an origins figure string to its modern `nx.Figure` representation.
 func (fc *FigureConverter) Convert(originsFigure string) (figure nx.Figure, err error) {
-	if len(originsFigure) % 5 != 0 {
+	if len(originsFigure)%5 != 0 {
 		err = ErrInvalidFigureStringLength
 		return
 	}

@@ -4,9 +4,9 @@ import (
 	"slices"
 	"strconv"
 
+	"github.com/himalayo/nx/raw/nitro"
+	x "github.com/himalayo/nx/raw/xml"
 	"golang.org/x/exp/maps"
-	"xabbo.io/nx/raw/nitro"
-	x "xabbo.io/nx/raw/xml"
 )
 
 // FurniAssetSpec represents an asset specifier for a furni library.
