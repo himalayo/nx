@@ -3,7 +3,7 @@ package nitro
 import (
 	"bufio"
 	"bytes"
-	"compress/zlib"
+	"compress/gzip"
 	"encoding/binary"
 	"io"
 )
@@ -89,7 +89,7 @@ func (r *Reader) ReadFile() (file File, err error) {
 	}
 
 	buffer := bytes.NewBuffer(make([]byte, 0, length*3/2))
-	z, err := zlib.NewReader(io.LimitReader(r.r, int64(length)))
+	z, err := gzip.NewReader(io.LimitReader(r.r, int64(length)))
 	if err != nil {
 		return
 	}
