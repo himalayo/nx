@@ -79,35 +79,41 @@ func (r *Reader) ReadArchive() (archive Archive, err error) {
 }
 
 func (r *Reader) ReadFile() (File, error) {
-	name, err := r.readString()
+	filename, err := r.readString()
 	if err != nil {
-		return File{}, err
+		return File{}, nil
 	}
 
 	length, err := r.readInt()
 	if err != nil {
-		return File{}, err
+		return File{}, nil
 	}
 
 	buffer := bytes.NewBuffer(make([]byte, 0, length*3/2))
-	z, err := gzip.NewReader(io.LimitReader(r.r, int64(length)))
+	copy := make([]byte, length)
+	io.ReadFull(r.r, copy)
+
+	z, err := zlib.NewReader(bytes.NewBuffer(copy))
 	if err != nil {
-		zed, err := zlib.NewReader(io.LimitReader(r.r, int64(length)))
+		g, err := gzip.NewReader(bytes.NewBuffer(copy))
 		if err != nil {
 			return File{}, err
 		}
 
-		_, err = io.Copy(buffer, zed)
+		_, err = io.Copy(buffer, g)
 		if err != nil {
 			return File{}, err
 		}
-	} else {
-		_, err = io.Copy(buffer, z)
-		if err != nil {
-			return File{}, err
-		}
+		file := File{Data: buffer.Bytes(), Name: filename}
+		return file, nil
+	}
+	defer z.Close()
+
+	_, err = io.Copy(buffer, z)
+	if err != nil {
+		return File{}, err
 	}
 
-	file := File{name, buffer.Bytes()}
+	file := File{Data: buffer.Bytes(), Name: filename}
 	return file, nil
 }
