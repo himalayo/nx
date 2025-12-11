@@ -20,7 +20,7 @@ type Asset struct {
 
 func (asset *Asset) SourceImage() image.Image {
 	for asset.Source != nil {
-		asset = asset.Source
+		return asset.Source.Image
 	}
 	return asset.Image
 }
