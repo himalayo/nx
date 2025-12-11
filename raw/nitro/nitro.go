@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"compress/gzip"
+	"compress/zlib"
 	"encoding/binary"
 	"io"
 )
@@ -77,28 +78,36 @@ func (r *Reader) ReadArchive() (archive Archive, err error) {
 	return
 }
 
-func (r *Reader) ReadFile() (file File, err error) {
+func (r *Reader) ReadFile() (File, error) {
 	name, err := r.readString()
 	if err != nil {
-		return
+		return File{}, err
 	}
 
 	length, err := r.readInt()
 	if err != nil {
-		return
+		return File{}, err
 	}
 
 	buffer := bytes.NewBuffer(make([]byte, 0, length*3/2))
 	z, err := gzip.NewReader(io.LimitReader(r.r, int64(length)))
 	if err != nil {
-		return
+		zed, err := zlib.NewReader(io.LimitReader(r.r, int64(length)))
+		if err != nil {
+			return File{}, err
+		}
+
+		_, err = io.Copy(buffer, zed)
+		if err != nil {
+			return File{}, err
+		}
+	} else {
+		_, err = io.Copy(buffer, z)
+		if err != nil {
+			return File{}, err
+		}
 	}
 
-	_, err = io.Copy(buffer, z)
-	if err != nil {
-		return
-	}
-
-	file = File{name, buffer.Bytes()}
-	return
+	file := File{name, buffer.Bytes()}
+	return file, nil
 }
