@@ -99,19 +99,19 @@ func (r *Reader) ReadFile() (File, error) {
 		if err != nil {
 			return File{}, err
 		}
+		defer g.Close()
 
 		_, err = io.Copy(buffer, g)
 		if err != nil {
 			return File{}, err
 		}
-		file := File{Data: buffer.Bytes(), Name: filename}
-		return file, nil
-	}
-	defer z.Close()
+	} else {
+		defer z.Close()
 
-	_, err = io.Copy(buffer, z)
-	if err != nil {
-		return File{}, err
+		_, err = io.Copy(buffer, z)
+		if err != nil {
+			return File{}, err
+		}
 	}
 
 	file := File{Data: buffer.Bytes(), Name: filename}
