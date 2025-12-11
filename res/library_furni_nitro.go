@@ -102,6 +102,7 @@ func LoadFurniLibraryNitro(archive nitro.Archive) (furniLibrary FurniLibrary, er
 		spriteImg := image.NewRGBA(image.Rect(0, 0, frame.W, frame.H))
 		draw.Src.Draw(spriteImg, size, imgSprites, image.Point{frame.X, frame.Y})
 		asset.Image = spriteImg
+		asset.Bounds = spriteImg.Bounds()
 	}
 
 	furniLibrary = nitroLib

@@ -15,6 +15,7 @@ type Asset struct {
 	FlipH  bool        // Whether the asset is flipped horizontally.
 	FlipV  bool        // Whether the asset is flipped vertically.
 	Offset image.Point // The asset's image offset.
+	Bounds image.Rectangle
 	Image  image.Image // The asset's image.
 }
 

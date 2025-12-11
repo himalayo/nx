@@ -107,6 +107,7 @@ func LoadFurniLibrarySwf(swf *swfx.Swf) (furniLibrary FurniLibrary, err error) {
 			return
 		}
 		assetsMap[assetName].Image = img
+		assetsMap[assetName].Bounds = img.Bounds()
 	}
 
 	furniLibrary = lib

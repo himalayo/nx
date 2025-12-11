@@ -164,7 +164,7 @@ func (r *furniImager) Compose(furni Furni) (anim Animation, err error) {
 
 			offset := asset.Offset
 			if asset.FlipH {
-				offset = flipOffsetFurni(offset, asset.SourceImage().Bounds())
+				offset = flipOffsetFurni(offset, asset.Bounds)
 			}
 
 			frames[frameId] = Frame{Sprite{
